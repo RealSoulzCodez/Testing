@@ -16,7 +16,7 @@ function trackErrors(page) {
 }
 
 /** Scroll in small instant steps so ScrollTrigger sees every position, then let the scrub settle. */
-async function scrollToY(page, y) {
+async function scrollToY(page, y, settle = 2000) {
   await page.evaluate(async (target) => {
     const start = window.scrollY;
     for (let i = 1; i <= 12; i++) {
@@ -24,7 +24,16 @@ async function scrollToY(page, y) {
       await new Promise((r) => setTimeout(r, 30));
     }
   }, y);
-  await page.waitForTimeout(2000);
+  await page.waitForTimeout(settle);
+}
+
+/**
+ * Scroll a section to the top of the viewport. Used instead of scrollIntoViewIfNeeded,
+ * which waits for the element to be "stable" and can stall while GSAP is animating it.
+ */
+async function scrollToSection(page, selector, settle) {
+  const y = await page.locator(selector).evaluate((el) => Math.round(el.getBoundingClientRect().top + window.scrollY));
+  await scrollToY(page, y, settle);
 }
 
 /** Scroll to a fraction of the pinned hero's scroll distance (end: '+=260%'). */
@@ -75,13 +84,12 @@ test('3D robot renders with WebGL and keeps animating', async ({ page }) => {
   const a = await robotDebug(page);
   expect(a, 'robot scene should exist').toBeTruthy();
   expect(a.triangles).toBeGreaterThan(5000);
-  await page.waitForTimeout(1000);
-  const b = await robotDebug(page);
-  expect(b.frames).toBeGreaterThan(a.frames);
-  expect(Math.abs(b.rotationY)).toBeLessThan(0.05); // facing the visitor before scrolling
+  await expect.poll(async () => (await robotDebug(page)).frames, { timeout: 10_000 }).toBeGreaterThan(a.frames);
+  expect(Math.abs((await robotDebug(page)).rotationY)).toBeLessThan(0.05); // facing the visitor before scrolling
 });
 
 test('scrolling the hero turns the robot and brings copy in from both sides', async ({ page }, testInfo) => {
+  test.slow(); // walks through every scroll phase; software WebGL on CI runners is slow
   await page.goto('/');
   await page.waitForTimeout(800);
 
@@ -127,7 +135,7 @@ test('scrolling the hero turns the robot and brings copy in from both sides', as
   await expect.poll(async () => (await robotDebug(page)).rotationY, { timeout: 10_000 }).toBeCloseTo(Math.PI * 2, 1);
 
   // After the pin the page continues into the About section.
-  await page.locator('#about').scrollIntoViewIfNeeded();
+  await scrollToSection(page, '#about');
   await page.waitForTimeout(1500);
   await expect(page.locator('#about h2')).toBeInViewport();
   await expectOpacity(page.locator('#about [data-reveal]').first(), 'toBeGreaterThan', 0.95);
@@ -135,7 +143,7 @@ test('scrolling the hero turns the robot and brings copy in from both sides', as
 
 test('robot rendering pauses once the hero is off screen', async ({ page }) => {
   await page.goto('/');
-  await page.locator('#contact').scrollIntoViewIfNeeded();
+  await scrollToSection(page, '#contact');
   await page.waitForTimeout(1500);
   const a = await robotDebug(page);
   await page.waitForTimeout(800);
@@ -181,7 +189,7 @@ test('?lang=ar opens the Arabic version directly and the hero still works', asyn
 
 test('solutions tabs switch panels by click and keyboard', async ({ page }) => {
   await page.goto('/');
-  await page.locator('#solutions').scrollIntoViewIfNeeded();
+  await scrollToSection(page, '#solutions');
   await page.waitForTimeout(1200);
 
   const health = page.locator('[data-panel="health"]');
@@ -212,7 +220,7 @@ test('no horizontal overflow in English or Arabic', async ({ page }) => {
     await page.goto(url);
     await page.waitForTimeout(800);
     for (const sel of ['#about', '#services', '#solutions', '#products', '#projects', '#events', '#contact']) {
-      await page.locator(sel).scrollIntoViewIfNeeded();
+      await scrollToSection(page, sel, 300); // only needs the reveals to fire
     }
     await page.waitForTimeout(1200);
     const { sw, cw } = await page.evaluate(() => ({ sw: document.documentElement.scrollWidth, cw: document.documentElement.clientWidth }));
