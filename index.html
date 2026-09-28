@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AITECHOM — AI & Robotics</title>
+  <meta name="description" content="AITECHOM is a global Omani company developing robotic systems and AI-based big-data solutions for education, healthcare, retail, libraries and more.">
+  <link rel="icon" href="./assets/img/logo-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <script>
+    document.documentElement.classList.add('js');
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('rm');
+  </script>
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true">
+    <span class="orb orb-a"></span><span class="orb orb-b"></span><span class="orb orb-c"></span>
+    <span class="grid-lines"></span>
+  </div>
+
+  <!-- Navigation -->
+  <header class="nav-wrap">
+    <nav class="nav glass" aria-label="Main">
+      <a class="nav-logo" href="#top" aria-label="AITECHOM home">
+        <img src="./assets/img/logo.png" alt="AITECHOM — Artificial Intelligence Technology" width="160" height="51">
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#solutions" data-i18n="nav.solutions">Solutions</a></li>
+        <li><a href="#services" data-i18n="nav.services">Services</a></li>
+        <li><a href="#products" data-i18n="nav.products">Products</a></li>
+        <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="lang-btn" id="lang-btn" type="button" aria-label="Switch language">عربي</button>
+        <a class="btn btn-primary btn-sm" href="#contact" data-i18n="nav.cta">Request a demo</a>
+        <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero: pinned while the robot turns -->
+    <section class="hero" id="top">
+      <div class="hero-stage">
+        <div class="hero-word" aria-hidden="true">AITECHOM</div>
+        <canvas id="robot-canvas" aria-label="3D humanoid robot" role="img"></canvas>
+        <img class="robot-fallback" src="./assets/img/p-nao.webp" alt="NAO humanoid robot" hidden>
+
+        <div class="hero-intro">
+          <span class="chip glass"><span class="dot"></span><span data-i18n="hero.kicker">Artificial Intelligence Technology · Oman</span></span>
+          <p class="hero-intro-line" data-i18n="hero.intro">An Omani robotics &amp; AI company, since 2018.</p>
+        </div>
+
+        <div class="hero-copy">
+          <div class="phase phase-1">
+            <div class="side side-start">
+              <span class="eyebrow">AITECHOM</span>
+              <h1 class="display" data-i18n="hero.h1">We find and develop innovative solutions</h1>
+            </div>
+            <div class="side side-end glass panel">
+              <p class="accent-line" data-i18n="hero.h1b">using artificial intelligence techniques</p>
+              <p data-i18n="hero.p1">From humanoid robots in classrooms to autonomous disinfection in hospitals, we bring robotics, big-data analysis and AI into everyday work.</p>
+            </div>
+          </div>
+
+          <div class="phase phase-2">
+            <div class="side side-start stats">
+              <div class="stat glass"><strong>2018</strong><span data-i18n="stat.founded">Founded in Muscat, Oman</span></div>
+              <div class="stat glass"><strong>3</strong><span data-i18n="stat.branches">Regional branches — Malaysia, Palestine, Turkey</span></div>
+              <div class="stat glass"><strong>16</strong><span data-i18n="stat.products">Robots &amp; learning technologies</span></div>
+            </div>
+            <div class="side side-end">
+              <h2 class="display-sm" data-i18n="hero.h2">Supporting and embracing innovators and creators</h2>
+              <p data-i18n="hero.p2">Attracting research competencies in artificial intelligence, locally and internationally.</p>
+              <div class="btn-row">
+                <a class="btn btn-primary" href="#solutions" data-i18n="hero.cta1">Explore solutions</a>
+                <a class="btn btn-glass" href="#contact" data-i18n="hero.cta2">Talk to us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-cue" aria-hidden="true">
+          <span class="mouse"><span></span></span>
+          <span data-i18n="hero.scroll">Scroll to meet our robot</span>
+        </div>
+        <div class="hero-progress" aria-hidden="true"><span></span></div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <div data-reveal="start">
+          <span class="eyebrow" data-i18n="about.eyebrow">Who we are</span>
+          <h2 class="h2" data-i18n="about.h2">A global Omani company for AI &amp; robotics</h2>
+          <p class="lead" data-i18n="about.p1">Established in 2018 in the Sultanate of Oman, AITECHOM combines high academic expertise with rich, diverse applied skills to deliver innovative solutions in robotic systems and AI-based big-data analysis.</p>
+          <p data-i18n="about.p2">We seek continuous research and development — attracting innovators locally and internationally, embracing and supporting them, and attracting investment so their ideas become reality.</p>
+        </div>
+        <div class="presence glass" data-reveal="end">
+          <div class="presence-head">
+            <span class="pulse"></span>
+            <span data-i18n="about.hq">Headquarters</span>
+          </div>
+          <p class="presence-city" data-i18n="about.city">Muscat, Oman</p>
+          <p class="muted" data-i18n="about.address">Zakirah Center, Muscat Expressway, Al Seeb</p>
+          <div class="divider"></div>
+          <span class="label" data-i18n="about.branches">Regional branches</span>
+          <ul class="branch-list">
+            <li><span class="flag-dot"></span><span data-i18n="about.my">Malaysia</span></li>
+            <li><span class="flag-dot"></span><span data-i18n="about.ps">Palestine</span></li>
+            <li><span class="flag-dot"></span><span data-i18n="about.tr">Turkey</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head" data-reveal="up">
+          <span class="eyebrow" data-i18n="services.eyebrow">What we do</span>
+          <h2 class="h2" data-i18n="services.h2">Our services</h2>
+        </div>
+        <div class="services-grid">
+          <article class="card glass" data-reveal="up">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6M9 11h.01M15 11h.01"/></svg></div>
+            <h3 data-i18n="s1.t">EDU AI Lab</h3>
+            <p data-i18n="s1.d">A turnkey, modular STEM learning space where students rotate between AI stations — assemblable and virtual robots, VR/AR and 3D printing.</p>
+          </article>
+          <article class="card glass" data-reveal="up">
+            <div class="icon"><svg viewBox="0 0 24 24"><rect x="5" y="8" width="14" height="10" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01M2 12v3M22 12v3"/></svg></div>
+            <h3 data-i18n="s2.t">Intelligent robots</h3>
+            <p data-i18n="s2.d">Robots with a well-developed “artificial brain” that plan actions for their purpose — including our library assistant built on temi.</p>
+          </article>
+          <article class="card glass" data-reveal="up">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <h3 data-i18n="s3.t">Smart systems</h3>
+            <p data-i18n="s3.d">AI-based cyber-attack detection: spotting new threats, battling bots, breach-risk and endpoint detection.</p>
+          </article>
+          <article class="card glass" data-reveal="up">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3M4 4h6M4 8h3"/></svg></div>
+            <h3 data-i18n="s4.t">Consultancy</h3>
+            <p data-i18n="s4.d">Design &amp; build for science museums, innovation centers and modern outlets — futuristic spaces that raise the standard.</p>
+          </article>
+          <article class="card glass" data-reveal="up">
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-5a3 3 0 016 0v5M12 9h.01"/></svg></div>
+            <h3 data-i18n="s5.t">Event &amp; robot rental</h3>
+            <p data-i18n="s5.d">Robots that inspire your audience at exhibitions, launches and events — we have served over 50 clients globally.</p>
+          </article>
+          <article class="card glass" data-reveal="up">
+            <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M7 12l3-3 2 2 4-4"/></svg></div>
+            <h3 data-i18n="s6.t">Training</h3>
+            <p data-i18n="s6.d">Courses for professionals and students: AI for Business Professionals, Python, UiPath RPA and robotic programming.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions by sector -->
+    <section class="section" id="solutions">
+      <div class="container">
+        <div class="section-head" data-reveal="up">
+          <span class="eyebrow" data-i18n="sol.eyebrow">Business solutions</span>
+          <h2 class="h2" data-i18n="sol.h2">Robots for every sector</h2>
+        </div>
+        <div class="tabs glass" role="tablist" data-reveal="up">
+          <button role="tab" aria-selected="true" data-tab="health" data-i18n="sol.health">Healthcare</button>
+          <button role="tab" aria-selected="false" data-tab="edu" data-i18n="sol.edu">Education</button>
+          <button role="tab" aria-selected="false" data-tab="retail" data-i18n="sol.retail">Retail &amp; hospitality</button>
+          <button role="tab" aria-selected="false" data-tab="home" data-i18n="sol.home">Home care</button>
+          <button role="tab" aria-selected="false" data-tab="estate" data-i18n="sol.estate">Real estate</button>
+          <button role="tab" aria-selected="false" data-tab="lib" data-i18n="sol.lib">Libraries</button>
+        </div>
+
+        <div class="tab-panels" data-reveal="up">
+          <div class="tab-panel glass active" data-panel="health" role="tabpanel">
+            <div class="tp-text">
+              <h3 data-i18n="sol.health.t">Your best helper in healthcare</h3>
+              <p data-i18n="sol.health.d">Whole-room UV-C disinfection with the UVD Robot, telepresence with the self-driving Double, and temi as a health-care assistant.</p>
+            </div>
+            <div class="tp-robots">
+              <figure><img src="./assets/img/p-uvd.webp" alt="UVD Robot" loading="lazy"><figcaption>UVD Robot</figcaption></figure>
+              <figure><img src="./assets/img/p-double.webp" alt="Double telepresence robot" loading="lazy"><figcaption>Double</figcaption></figure>
+              <figure><img src="./assets/img/p-temi.webp" alt="temi robot" loading="lazy"><figcaption>temi</figcaption></figure>
+            </div>
+          </div>
+          <div class="tab-panel glass" data-panel="edu" role="tabpanel">
+            <div class="tp-text">
+              <h3 data-i18n="sol.edu.t">Robots that open minds</h3>
+              <p data-i18n="sol.edu.d">The humanoid NAO, VEX and the Niryo Ned2 collaborative arm make STEM tangible — from K-12 classrooms to university research.</p>
+            </div>
+            <div class="tp-robots">
+              <figure><img src="./assets/img/p-nao.webp" alt="NAO humanoid robot" loading="lazy"><figcaption>NAO</figcaption></figure>
+              <figure><img src="./assets/img/p-vex.webp" alt="VEX robotics kit" loading="lazy"><figcaption>VEX</figcaption></figure>
+              <figure><img src="./assets/img/p-ned2.webp" alt="Niryo Ned2 robot arm" loading="lazy"><figcaption>Ned2</figcaption></figure>
+            </div>
+          </div>
+          <div class="tab-panel glass" data-panel="retail" role="tabpanel">
+            <div class="tp-text">
+              <h3 data-i18n="sol.retail.t">Let your staff focus on customers</h3>
+              <p data-i18n="sol.retail.d">Serving and delivery robots for restaurants, cafés, malls and shops — bringing convenience to guests and space to the floor.</p>
+            </div>
+            <div class="tp-robots">
+              <figure><img src="./assets/img/p-bellabot.webp" alt="BellaBot" loading="lazy"><figcaption>BellaBot</figcaption></figure>
+              <figure><img src="./assets/img/p-kittybot.webp" alt="KettyBot" loading="lazy"><figcaption>KittyBot</figcaption></figure>
+              <figure><img src="./assets/img/p-holabot.webp" alt="HolaBot" loading="lazy"><figcaption>HolaBot</figcaption></figure>
+            </div>
+          </div>
+          <div class="tab-panel glass" data-panel="home" role="tabpanel">
+            <div class="tp-text">
+              <h3 data-i18n="sol.home.t">Independent living, made easy</h3>
+              <p data-i18n="sol.home.d">temi offers seniors safety, video communication and entertainment, with easy access to digital services by touch or voice.</p>
+            </div>
+            <div class="tp-robots">
+              <figure><img src="./assets/img/p-temi.webp" alt="temi robot" loading="lazy"><figcaption>temi</figcaption></figure>
+            </div>
+          </div>
+          <div class="tab-panel glass" data-panel="estate" role="tabpanel">
+            <div class="tp-text">
+              <h3 data-i18n="sol.estate.t">Robotics &amp; VR for property</h3>
+              <p data-i18n="sol.estate.d">Customer service, enquiries and property tours — plus virtual-reality walkthroughs of projects still under construction.</p>
+            </div>
+            <div class="tp-robots">
+              <figure><img src="./assets/img/p-temi.webp" alt="temi robot" loading="lazy"><figcaption>temi</figcaption></figure>
+              <figure><img src="./assets/img/p-flashbot.webp" alt="FlashBot" loading="lazy"><figcaption>FlashBot</figcaption></figure>
+              <figure><img src="./assets/img/p-redbox.webp" alt="RedBox VR kit" loading="lazy"><figcaption>RedBox VR</figcaption></figure>
+            </div>
+          </div>
+          <div class="tab-panel glass" data-panel="lib" role="tabpanel">
+            <div class="tp-text">
+              <h3 data-i18n="sol.lib.t">Smarter libraries</h3>
+              <p data-i18n="sol.lib.d">Robots that guide visitors to their books, answer repetitive queries and give librarians more time for what matters.</p>
+            </div>
+            <div class="tp-robots">
+              <figure><img src="./assets/img/p-temi.webp" alt="temi robot" loading="lazy"><figcaption>temi</figcaption></figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products marquee -->
+    <section class="section products" id="products">
+      <div class="container">
+        <div class="section-head" data-reveal="up">
+          <span class="eyebrow" data-i18n="prod.eyebrow">Products</span>
+          <h2 class="h2" data-i18n="prod.h2">16 robots &amp; technologies, one partner</h2>
+        </div>
+      </div>
+      <div class="marquee" data-reveal="up">
+        <div class="marquee-track">
+          <figure class="product glass"><img src="./assets/img/p-nao.webp" alt="" loading="lazy"><figcaption>NAO</figcaption></figure>
+          <figure class="product glass"><img src="./assets/img/p-pepper.webp" alt="" loading="lazy"><figcaption>Pepper</figcaption></figure>
+          <figure class="product glass"><img src="./assets/img/p-temi.webp" alt="" loading="lazy"><figcaption>temi</figcaption></figure>
+          <figure class="product glass"><img src="./assets/img/p-bellabot.webp" alt="" loading="lazy"><figcaption>BellaBot</figcaption></figure>
+          <figure class="product glass"><img src="./assets/img/p-uvd.webp" alt="" loading="lazy"><figcaption>UVD Robot</figcaption></figure>
+          <figure class="product glass"><img src="./assets/img/p-double.webp" alt="" loading="lazy"><figcaption>Double</figcaption></figure>
+          <figure class="product glass"><img src="./assets/img/p-redbox.webp" alt="" loading="lazy"><figcaption>RedBox VR</figcaption></figure>
+          <figure class="product glass"><img src="./assets/img/p-classvr.webp" alt="" loading="lazy"><figcaption>ClassVR</figcaption></figure>
+          <figure class="product glass"><img src="./assets/img/p-ned2.webp" alt="" loading="lazy"><figcaption>Ned2</figcaption></figure>
+          <figure class="product glass"><img src="./assets/img/p-vex.webp" alt="" loading="lazy"><figcaption>VEX</figcaption></figure>
+          <figure class="product glass"><img src="./assets/img/p-quadruped.webp" alt="" loading="lazy"><figcaption data-i18n="prod.quad">4-legged robot</figcaption></figure>
+          <figure class="product glass"><img src="./assets/img/p-3dprint.webp" alt="" loading="lazy"><figcaption data-i18n="prod.3d">3D printing</figcaption></figure>
+          <figure class="product glass"><img src="./assets/img/p-kittybot.webp" alt="" loading="lazy"><figcaption>KittyBot</figcaption></figure>
+          <figure class="product glass"><img src="./assets/img/p-holabot.webp" alt="" loading="lazy"><figcaption>HolaBot</figcaption></figure>
+          <figure class="product glass"><img src="./assets/img/p-flashbot.webp" alt="" loading="lazy"><figcaption>FlashBot</figcaption></figure>
+          <figure class="product glass"><img src="./assets/img/p-swiftbot.webp" alt="" loading="lazy"><figcaption>SwiftBot</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured projects -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head" data-reveal="up">
+          <span class="eyebrow" data-i18n="proj.eyebrow">Featured projects</span>
+          <h2 class="h2" data-i18n="proj.h2">Built and deployed by AITECHOM</h2>
+        </div>
+        <div class="bento">
+          <article class="bento-item b-lib glass" data-reveal="start">
+            <div class="b-media duo">
+              <img src="./assets/img/library-1.webp" alt="temi robot showing the Afaq Almarifa Arabic welcome screen" loading="lazy">
+              <img src="./assets/img/library-2.webp" alt="temi robot inside a library" loading="lazy">
+            </div>
+            <div class="b-body">
+              <span class="tag" data-i18n="proj.lib.tag">Library robot</span>
+              <h3 data-i18n="proj.lib.t">Afaq Almarifa</h3>
+              <p data-i18n="proj.lib.d">We integrated our library management system into the temi robot: it navigates the shelves, guides visitors to their books and helps by summarising them.</p>
+            </div>
+          </article>
+          <article class="bento-item b-edu glass" data-reveal="end">
+            <div class="b-media"><img src="./assets/img/edu-lab.webp" alt="EDU AI Lab learning space" loading="lazy"></div>
+            <div class="b-body">
+              <span class="tag" data-i18n="proj.edu.tag">EDU AI Lab</span>
+              <h3 data-i18n="proj.edu.t">AI learning spaces</h3>
+              <p data-i18n="proj.edu.d">Implemented in three schools across two countries, and at the UTAS AI Center.</p>
+              <ul class="pill-list">
+                <li data-i18n="proj.edu.l1">UTAS AI Center</li>
+                <li data-i18n="proj.edu.l2">Robotics competition · Penang, Malaysia</li>
+                <li data-i18n="proj.edu.l3">Lab installation · Tanga, Tanzania</li>
+              </ul>
+            </div>
+          </article>
+          <article class="bento-item b-uvd glass" data-reveal="up">
+            <div class="b-media"><img src="./assets/img/uvd-fleet.webp" alt="A group of UVD disinfection robots" loading="lazy"></div>
+            <div class="b-body">
+              <span class="tag" data-i18n="proj.uvd.tag">Healthcare</span>
+              <h3 data-i18n="proj.uvd.t">Autonomous UV-C disinfection</h3>
+              <p data-i18n="proj.uvd.d">A fast, efficient and chemical-free whole-room disinfection solution, designed to be operated by everyday cleaning staff.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events -->
+    <section class="section" id="events">
+      <div class="container events-grid">
+        <div class="events-copy" data-reveal="start">
+          <span class="eyebrow" data-i18n="ev.eyebrow">Event &amp; robot rental</span>
+          <h2 class="h2" data-i18n="ev.h2">Bring innovation to life</h2>
+          <p data-i18n="ev.p">Renting a robot is an excellent way to inspire your audience and staff to think futuristically. We collaborate with skilled partners and have served over 50 clients globally.</p>
+          <a class="btn btn-glass" href="#contact" data-i18n="ev.cta">Book a robot</a>
+        </div>
+        <div class="gallery" data-reveal="end">
+          <img src="./assets/img/event-5.webp" alt="Visitors using a temi robot at an exhibition" loading="lazy">
+          <img src="./assets/img/event-1.webp" alt="temi robot at an exhibition stand" loading="lazy">
+          <img src="./assets/img/event-3.webp" alt="A guest trying a ClassVR headset" loading="lazy">
+          <img src="./assets/img/event-4.webp" alt="Guests with a temi robot at a real-estate stand" loading="lazy">
+          <img src="./assets/img/event-2.webp" alt="temi robot guiding visitors at an exhibition" loading="lazy">
+          <img src="./assets/img/event-6.webp" alt="Officials at an event with a robot" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="cta glass" data-reveal="up">
+          <div class="cta-copy">
+            <span class="eyebrow" data-i18n="cta.eyebrow">Ready to get started?</span>
+            <h2 class="h2" data-i18n="cta.h2">Take the first step to knowledge with us</h2>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="mailto:info@aitech.om" data-i18n="cta.email">Email us</a>
+              <a class="btn btn-glass" href="tel:+96899701619" data-i18n="cta.call">Call us</a>
+            </div>
+          </div>
+          <ul class="contact-list">
+            <li><span class="label" data-i18n="cta.phone">Phone</span><a href="tel:+96899701619" dir="ltr">+968 9970 1619</a></li>
+            <li><span class="label" data-i18n="cta.mail">Email</span><a href="mailto:info@aitech.om">info@aitech.om</a></li>
+            <li><span class="label" data-i18n="cta.addr">Address</span><span data-i18n="cta.addr.v">Zakirah Center, Muscat Expressway, Al Seeb, PO Box 510, Postcode 123, Muscat, Oman</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <img src="./assets/img/logo.png" alt="AITECHOM" width="130" height="41">
+      <p class="muted" data-i18n="footer.copy">© AITECHOM — Artificial Intelligence Technology.</p>
+      <p class="muted small" data-i18n="footer.note">Concept homepage — design proposal.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
